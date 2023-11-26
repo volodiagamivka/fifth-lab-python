@@ -1,4 +1,6 @@
 class Musician:
+    """Information about singers"""
+    
     def __init__(self, name, fee, age):
         self.__name = name
         self.__fee = fee
@@ -18,6 +20,8 @@ class Musician:
 
 
 class MusicFestival:
+    """Information about festival"""
+    
     def __init__(self, max_finance, musicians=[]):
         self.__max_finance = max_finance
         self.singers = []
