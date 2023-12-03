@@ -22,9 +22,11 @@ class Musician:
 class MusicFestival:
     """Information about festival"""
     
-    def __init__(self, max_finance, musicians=[]):
+    def __init__(self, max_finance, musicians=None):
         self.__max_finance = max_finance
         self.singers = []
+        if musicians is None:
+            musicians = []
         for musician in musicians:
             self.add_musician(musician)
 
@@ -47,17 +49,17 @@ class MusicFestival:
 
 
 def main():
-    musician1 = Musician("Michael Cashmore", 5000, 30)
-    musician2 = Musician("Ben Adams", 3000, 25)
-    musician3 = Musician("Adele", 20000, 35)
+    michael_cashmore = Musician("Michael Cashmore", 5000, 30)
+    ben_adams = Musician("Ben Adams", 3000, 25)
+    adele = Musician("Adele", 20000, 35)
 
     festival = MusicFestival(10000)
 
-    festival.add_musician(musician1)
-    festival.add_musician(musician2)
-    festival.add_musician(musician3)
+    festival.add_musician(michael_cashmore)
+    festival.add_musician(ben_adams)
+    festival.add_musician(adele)
 
-    festival.remove_musician(musician1)
+    festival.remove_musician(michael_cashmore)
 
 
 if __name__ == "__main__":
